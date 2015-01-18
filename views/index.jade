@@ -1,0 +1,20 @@
+html
+  head
+    title!= "Hello There"
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    include header.html
+    if (typeof(conferences) !== 'undefined')
+        each conference in conferences
+            .conference.row
+                .col-md-6.col-md-offset-3
+                    .panel.panel-default
+                        .panel-heading
+                            h1!= conference.title
+                        .panel-body
+                            li!= 'Event Date: ' + conference.event_date
+                            li!= 'Event Location: ' + conference.event_location
+                            li!= 'Call for papers: ' + conference.call_for_papers_start_date + ' - ' + conference.call_for_papers_end_date
+                            li!= conference.event_description
+    include footer.html
