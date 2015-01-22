@@ -17,6 +17,14 @@ app.get('/', function (req, res) {
     });
 })
 
+app.post('/submit', function (req, res) {
+    res.redirect(301, '/');
+})
+
+app.get('/submit', function (req, res) {
+    res.render('submit');
+})
+
 var server = app.listen(3000, function () {
     console.log('Example app listening at http://localhost:3000');
 })

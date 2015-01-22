@@ -1,0 +1,24 @@
+html
+    head
+        title!= "Hello There"
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/style.css')
+        link(rel='stylesheet', href='/css/jquery-ui.min.css')
+    body
+        include header.html
+        .row
+        div#contact-area.col-md-6.col-md-offset-3
+            form(method='post',action='/submit')
+                .input-group
+                    input(type='text',name='name',id='name', class="form-control", placeholder="Conference Name")  
+                    input(type='text',name='location',id='location', class="form-control", placeholder="Conference Location")     
+                    input(type='text',name='website',id='website', class="form-control", placeholder="Conference Website")  
+                .input-group      
+                    input(type='text',name='cfp_start_date',id='cfp_start_date', class="form-control", placeholder="Call For Papers Start Date")  
+                    input(type='text',name='cfp_end_date',id='cfp_end_date', class="form-control", placeholder="Call For Papers End Date")  
+                .input-group      
+                    input(type='text',name='conference_start_date',id='conference_start_date', class="form-control", placeholder="Conference Start Date")  
+                    input(type='text',name='conference_end_date',id='conference_end_date', class="form-control", placeholder="Conference End Date")  
+                .input-group
+                    input(type='submit',name='submit',value='Submit a conference!', class="btn btn-default")     
+        include footer.html

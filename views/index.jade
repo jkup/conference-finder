@@ -3,9 +3,12 @@ html
     title!= "Hello There"
     link(rel='stylesheet', href='/css/bootstrap.css')
     link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/jquery-ui.min.css')
   body
     include header.html
-    if (typeof(conferences) !== 'undefined')
+    if (message)
+            .alert.alert-success !{message}
+    if (conferences)
         each conference in conferences
             .conference.row
                 .col-md-6.col-md-offset-3
